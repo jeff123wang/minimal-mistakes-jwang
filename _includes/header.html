@@ -1,0 +1,156 @@
+<!-- _includes/header.html -->
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>{{ page.title }}</title>
+    <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+    <!-- Other head elements like meta tags, etc. -->
+</head>
+
+<header class="page-header bg-white">
+    <!-- desktop/start -->
+    <div class="desktop-navbar-wrap hidden-md hidden-sm hidden-xs">
+        <div class="container">
+            <div class="navbar-inner">
+                <div class="row ">
+                    <div class="col-lg-3 col-md-2 brand header-match-height" style="height: 113px;">
+                        <a href="/" class="logo">
+                            <img src="https://www.les.edu/wp-content/themes/innovext/images/logo.png"
+                                alt="LOGOS Evangelical Seminary 正道福音神學院">
+                        </a>
+                    </div>
+                    <div class="col-lg-9 col-md-10 primary header-match-height" style="height: 113px;">
+                        <!-- aside/start -->
+                        <div class="navbar-aside">
+                            <div class="d-menu-aside pull-right">
+                                <ul id="menu-top-menu-zh" class="nav">
+                                    {% for item in site.data.navigation.navbar_aside_links %}
+                                    <li class="menu-item"><a href="{{ item.url }}">{{ item.title }}</a></li>
+                                    {% endfor %}
+
+                                    <li id="menu-item-9686"
+                                        class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-9686">
+                                        <a href="#">Language</a>
+                                        <ul class="sub-menu">
+                                            <li id="menu-item-9687-zh"
+                                                class="lang-item lang-item-4 lang-item-zh current-lang lang-item-first menu-item menu-item-type-custom menu-item-object-custom current_page_item menu-item-home menu-item-9687-zh">
+                                                <a href="https://www.les.edu/language/zh/" hreflang="zh-TW"
+                                                    lang="zh-TW">中文</a>
+                                            </li>
+                                            <li id="menu-item-9687-en"
+                                                class="lang-item lang-item-2 lang-item-en menu-item menu-item-type-custom menu-item-object-custom menu-item-9687-en">
+                                                <a href="https://www.les.edu/language/en/" hreflang="en-US"
+                                                    lang="en-US">English</a>
+                                            </li>
+                                        </ul>
+                                        <span class="submenu-toggle"><i class="fa fa-chevron-down"></i></span>
+                                    </li>
+                                </ul>
+                                <!-- search/start -->
+                                <div class="search-button">
+                                    <a href="#" class="search-toggle">
+                                        <i class="fa fa-search" aria-hidden="true"></i>
+                                    </a>
+                                </div>
+                                <!-- add class "open"-->
+                                <div class="header-search-form">
+                                    <form action="https://www.les.edu/language/zh/" class="search-field">
+                                        <input type="text" class="text search-input" name="s" placeholder="search...">
+                                        <input type="hidden" name="lang" value="zh">
+                                        <input style="display:none;" type="submit" value="">
+                                    </form>
+                                    <!-- search/end -->
+                                </div>
+                            </div>
+                        </div>
+                        <!-- aside/end -->
+                        <!-- menu/start -->
+                        <div class="navbar-menu">
+                            <div class="d-menu-primary">
+                                <ul id="menu-main-menu-zh" class="nav main-nav">
+                                    {% for item in site.data.navigation.main_menu %}
+                                    <li id="menu-item-{{ forloop.index }}"
+                                        class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-{{ forloop.index }}">
+                                        <a href="{{ item.url }}">{{ item.title }}</a>
+                                        {% if item.submenu %}
+                                        <ul class="sub-menu">
+                                            {% for subitem in item.submenu %}
+                                            <li id="menu-item-{{ forloop.parentloop.index }}-{{ forloop.index }}"
+                                                class="menu-item menu-item-type-post_type menu-item-object-page menu-item-{{ forloop.parentloop.index }}-{{ forloop.index }}">
+                                                <a href="{{ subitem.url }}">{{ subitem.title }}</a>
+                                            </li>
+                                            {% endfor %}
+                                        </ul>
+                                        <span class="submenu-toggle"><i class="fa fa-chevron-down"></i></span>
+                                        {% endif %}
+                                    </li>
+                                    {% endfor %}
+                                    <li id="menu-item-27890"
+                                        class="button menu-item menu-item-type-custom menu-item-object-custom menu-item-27890">
+                                        <a href="https://www.les.edu/support-logos-zh/">奉獻 Donate</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- menu/end -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- desktop/end -->
+    <!-- mobile/start -->
+    <div class="mobile-navbar-wrap visible-xs-block visible-sm-block visible-md-block">
+        <!-- main-menu/start -->
+        <div class="menu-primary">
+            <div class="hamburger">
+                <div class="menu-toggle">
+                    <span></span>
+                </div>
+            </div>
+        </div>
+
+        <!-- main-menu/end -->
+        <!-- aside-menu/start -->
+        <div class="menu-aside">
+            <div class="aside aside-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+
+        <!-- aside-menu/end -->
+        <!-- Brand/start -->
+        <div class="logo">
+            <a href="/" class="mobile-brand">
+                <img src="https://www.les.edu/wp-content/themes/innovext/images/logo.png"
+                    alt="LOGOS Evangelical Seminary 正道福音神學院">
+            </a>
+        </div>
+        <!-- Brand/end -->
+        <div class="mobile-menu-container">
+            <div class="mobile-nav">
+                <ul id="menu-main-menu-zh-1" class="nav">
+                    {% for item in site.data.navigation.navbar_aside_links %}
+                    <li class="menu-item"><a href="{{ item.url }}">{{ item.title }}</a></li>
+                    {% endfor %}
+                    <li class="button menu-item menu-item-type-custom menu-item-object-custom menu-item-27890"><a
+                            href="https://www.les.edu/support-logos-zh/">奉獻 Donate</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="mobile-aside-container">
+            <div class="mobile-nav">
+                <ul id="menu-top-menu-zh-1" class="nav">
+                    {% for item in site.data.navigation.navbar_aside_links %}
+                    <li class="menu-item"><a href="{{ item.url }}">{{ item.title }}</a></li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- mobile/end -->
+</header>
