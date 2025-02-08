@@ -16,7 +16,7 @@
             <div class="navbar-inner">
                 <div class="row ">
                     <div class="col-lg-3 col-md-2 brand header-match-height" style="height: 113px;">
-                        <a href="/" class="logo">
+                        <a href="{{ '/' | relative_url }}" class="logo">
                             <img src="https://www.les.edu/wp-content/themes/innovext/images/logo.png"
                                 alt="LOGOS Evangelical Seminary 正道福音神學院">
                         </a>
@@ -27,7 +27,8 @@
                             <div class="d-menu-aside pull-right">
                                 <ul id="menu-top-menu-zh" class="nav">
                                     {% for item in site.data.navigation.navbar_aside_links %}
-                                    <li class="menu-item"><a href="{{ item.url }}">{{ item.title }}</a></li>
+                                    <li class="menu-item"><a href="{{ item.url | relative_url }}">{{ item.title }}</a>
+                                    </li>
                                     {% endfor %}
 
                                     <li id="menu-item-9686"
@@ -73,13 +74,13 @@
                                     {% for item in site.data.navigation.main_menu %}
                                     <li id="menu-item-{{ forloop.index }}"
                                         class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-{{ forloop.index }}">
-                                        <a href="{{ item.url }}">{{ item.title }}</a>
+                                        <a href="{{ item.url | relative_url }}">{{ item.title }}</a>
                                         {% if item.submenu %}
                                         <ul class="sub-menu">
                                             {% for subitem in item.submenu %}
                                             <li id="menu-item-{{ forloop.parentloop.index }}-{{ forloop.index }}"
                                                 class="menu-item menu-item-type-post_type menu-item-object-page menu-item-{{ forloop.parentloop.index }}-{{ forloop.index }}">
-                                                <a href="{{ subitem.url }}">{{ subitem.title }}</a>
+                                                <a href="{{ subitem.url | relative_url }}">{{ subitem.title }}</a>
                                             </li>
                                             {% endfor %}
                                         </ul>
@@ -135,7 +136,7 @@
             <div class="mobile-nav">
                 <ul id="menu-main-menu-zh-1" class="nav">
                     {% for item in site.data.navigation.navbar_aside_links %}
-                    <li class="menu-item"><a href="{{ item.url }}">{{ item.title }}</a></li>
+                    <li class="menu-item"><a href="{{ item.url | relative_url }}">{{ item.title }}</a></li>
                     {% endfor %}
                     <li class="button menu-item menu-item-type-custom menu-item-object-custom menu-item-27890"><a
                             href="https://www.les.edu/support-logos-zh/">奉獻 Donate</a></li>
@@ -146,7 +147,7 @@
             <div class="mobile-nav">
                 <ul id="menu-top-menu-zh-1" class="nav">
                     {% for item in site.data.navigation.navbar_aside_links %}
-                    <li class="menu-item"><a href="{{ item.url }}">{{ item.title }}</a></li>
+                    <li class="menu-item"><a href="{{ item.url | relative_url}}">{{ item.title }}</a></li>
                     {% endfor %}
                 </ul>
             </div>
