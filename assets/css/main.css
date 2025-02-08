@@ -89,6 +89,17 @@
     }
 }
 
+.desktop-navbar-wrap .navbar-inner .d-menu-primary>ul.nav>li.current-menu-ancestor>a:after,
+.desktop-navbar-wrap .navbar-inner .d-menu-primary>ul.nav>li.current-menu-item>a:after {
+    font: normal normal normal 20px/1 FontAwesome;
+    content: "▲";
+    position: absolute;
+    bottom: 0;
+    left: 42%;
+    color: #b3c98c;
+    height: 8px
+}
+
 /*! CSS Used from: Embedded */
 :root {
     --wp--preset--aspect-ratio--square: 1;
